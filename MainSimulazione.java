@@ -10,7 +10,7 @@ public class MainSimulazione {
         System.out.println("Avvio simulazione con " + NUM_PACCHI + " pacchi e " + NUM_OPERATORI + " operatori...");
     
         // Creazione e avvio dei thread
-        for (int i = 0; i < NUM_OPERATORI; i++) {
+        for (int i = 0; i < NUM_OPERATORI; i++) { 
             operatori[i] = new Operatore(i + 1, centro);
             operatori[i].start();
         }

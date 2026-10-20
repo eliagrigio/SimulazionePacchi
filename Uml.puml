@@ -1,0 +1,33 @@
+@startuml
+
+
+class MainSimulazione {
+    + {static} void main(String[] args)
+}
+
+class CentroSmistamento {
+    - int pacchiDisponibili
+    - int pacchiIniziali
+    - AtomicInteger tentativiTotali
+    - AtomicInteger assegnazioniRiuscite
+    - AtomicInteger assegnazioniFallite
+    + CentroSmistamento(int pacchiIniziali)
+    + synchronized boolean prelevaPacco()
+    + void incrementaTentativo()
+    + void incrementaFallito()
+    + void stampaReport()
+    + synchronized int getPacchiDisponibili()
+}
+
+class Operatore {
+    - int idOperatore
+    - int pacchiAssegnatiDaMe
+    + Operatore(int id, CentroSmistamento centro)
+    + void run()
+}
+
+MainSimulazione ..> CentroSmistamento : crea
+MainSimulazione ..> Operatore : crea e avvia
+Operatore --> CentroSmistamento : usa / condivide
+
+@enduml

@@ -1,7 +1,7 @@
 // Fase 2 - Classe che modella il Thread Operatore
 public class Operatore extends Thread {
-    private final int idOperatore;
-    private final CentroSmistamento centro;
+    private int idOperatore;
+    private CentroSmistamento centro;
     private int pacchiAssegnatiDaMe = 0;
 
     public Operatore(int id, CentroSmistamento centro) {
@@ -18,7 +18,7 @@ public class Operatore extends Thread {
             // Introduciamo un piccolo ritardo casuale per simulare il lavoro reale
             // e forzare l'avvicendamento dei thread (Thread.sleep)
             try {
-                Thread.sleep((int)(Math.random() * 10));
+                Thread.sleep((int)(Math.random() * 10)); 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

@@ -3,12 +3,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 // Fase 2 - Classe che gestisce la risorsa condivisa
 public class CentroSmistamento {
     private int pacchiDisponibili;
-    private final int pacchiIniziali;
+    private  int pacchiIniziali;
     
     // Fase 4 - Utilizzo di variabili atomiche per le statistiche ad alta frequenza
-    private final AtomicInteger tentativiTotali = new AtomicInteger(0);
-    private final AtomicInteger assegnazioniRiuscite = new AtomicInteger(0);
-    private final AtomicInteger assegnazioniFallite = new AtomicInteger(0);
+    private  AtomicInteger tentativiTotali = new AtomicInteger(0);
+    private  AtomicInteger assegnazioniRiuscite = new AtomicInteger(0); 
+    private  AtomicInteger assegnazioniFallite = new AtomicInteger(0);
 
     public CentroSmistamento(int pacchiIniziali) {
         this.pacchiIniziali = pacchiIniziali;
