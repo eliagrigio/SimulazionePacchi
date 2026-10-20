@@ -26,8 +26,8 @@ class Operatore {
     + void run()
 }
 
-MainSimulazione ..> CentroSmistamento : crea
-MainSimulazione ..> Operatore : crea e avvia
-Operatore --> CentroSmistamento : usa / condivide
+MainSimulazione ..> CentroSmistamento : 
+MainSimulazione ..> Operatore : 
+Operatore --> CentroSmistamento : 
 
 @enduml
